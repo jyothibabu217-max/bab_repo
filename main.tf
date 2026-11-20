@@ -9,6 +9,6 @@ terraform {
 }
 
 resource "local_file" "devops_demo" {
-  filename = "devops-demo.txt"
+  filename = "devops-j.txt"
   content  = "Hello! Terraform is working through HCP Terraform."
 }
