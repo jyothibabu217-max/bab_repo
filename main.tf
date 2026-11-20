@@ -12,11 +12,6 @@ provider "azurerm" {
   features {}
 }
 
-variable "subscription_id" {
-  type      = string
-  sensitive = true
-}
-
 resource "azurerm_resource_group" "demo" {
   name     = "rg-hcp-tfe-learning"
   location = "Central India"
