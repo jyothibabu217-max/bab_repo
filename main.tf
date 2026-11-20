@@ -1,24 +1,14 @@
 
 terraform {
   required_providers {
-    azurerm = {
-      source  = "hashicorp/azurerm"
-      version = "~> 4.0"
+    local = {
+      source  = "hashicorp/local"
+      version = "~> 2.5"
     }
   }
 }
 
-provider "azurerm" {
-  features {}
-  subscription_id = var.subscription_id
-}
-
-variable "subscription_id" {
-  type      = string
-  sensitive = true
-}
-
-resource "azurerm_resource_group" "demo" {
-  name     = "rg-hcp-tfe-learning"
-  location = "Central India"
+resource "local_file" "devops_demo" {
+  filename = "devops-demo.txt"
+  content  = "Hello! Terraform is working through HCP Terraform."
 }
